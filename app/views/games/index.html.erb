@@ -18,9 +18,14 @@
   </nav> <!-- end #nav-wrap -->
 
   <ul class="header-social">
-     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.username %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
   </ul>
 
 </header>
@@ -32,7 +37,7 @@
    <div class="twelve columns">
 
      <div class="hero-text">
-       <h1 class="responsive-headline">Listing Games</h1>
+       <h1 class="responsive-headline">Games</h1>
      </div>
      </br>
 
@@ -44,7 +49,9 @@
 <section id="styles">
   <% @games.each do |game| %>
   <div class="row">
-    <h2><%= game.e1 %> VS <%= game.e2 %></h2>
+    <a href="./games/<%= game.id %>">
+      <h2><%= game.e1 %> VS <%= game.e2 %></h2>
+    </a>
     <p>
       <%= game.description %></br>
       Start time : <%= game.start %></br>
@@ -52,6 +59,7 @@
     </p>  
     <hr>
   </div>
+
   <% end %>
 </section>
 <table>
@@ -64,7 +72,7 @@
       <th>E2</th>
       <th>S1</th>
       <th>S2</th>
-      <th>Start</th>
+      <th>start</th>
       <th>End</th>
       <th>Location</th>
       <th colspan="3"></th>

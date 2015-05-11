@@ -10,6 +10,10 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @isPlayed = "Not played"
+    if @game.s1 != nil
+      @isPlayed = @game.s1.to_s+" - "+@game.s2.to_s 
+    end
   end
 
   # GET /games/new
