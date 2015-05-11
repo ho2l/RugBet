@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id game:</strong>
+  <%= @bet.id_game %>
+</p>
+
+<p>
+  <strong>Id user:</strong>
+  <%= @bet.id_user %>
+</p>
+
+<p>
+  <strong>S1:</strong>
+  <%= @bet.s1 %>
+</p>
+
+<p>
+  <strong>S2:</strong>
+  <%= @bet.s2 %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @bet.points %>
+</p>
+
+<p>
+  <strong>Done:</strong>
+  <%= @bet.done %>
+</p>
+
+<%= link_to 'Edit', edit_bet_path(@bet) %> |
+<%= link_to 'Back', bets_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_game: 1
+  id_user: 1
+  s1: 1
+  s2: 1
+  points: 1
+  done: false
+
+two:
+  id_game: 1
+  id_user: 1
+  s1: 1
+  s2: 1
+  points: 1
+  done: false
