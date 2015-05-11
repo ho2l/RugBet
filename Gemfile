@@ -33,7 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 #Use devise for authent 
 gem 'devise'
+#Use bootstrap for beautiful things and pony 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+#Use Bower to live more time ! Thank's Jack ! 
+gem 'bower-rails', '~> 0.9.2'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
