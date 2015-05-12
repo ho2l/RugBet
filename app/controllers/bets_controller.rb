@@ -24,7 +24,9 @@ class BetsController < ApplicationController
   # POST /bets
   # POST /bets.json
   def create
-    @bet = Bet.new(bet_params)
+    @game = Game.find(params[:game_id])
+    @bet = @game.bets.new(bet_params)
+    @bet.user = current_user
 
     respond_to do |format|
       if @bet.save
