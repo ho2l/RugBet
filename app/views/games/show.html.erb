@@ -6,7 +6,7 @@
 
   <nav id="nav-wrap">         
      
-     <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
     <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>         
 
      <ul id="nav" class="nav">
@@ -42,7 +42,22 @@
  </div>
 
 </section>
-
+<section id="styles">
+  <div class="row">
+    <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
+    <p>
+      <%= @game.description %></br>
+      Start time : <%= @game.start %></br>
+      At <%= @game.location %>
+    </p>  
+    <hr>
+  </div>
+  <% if user_signed_in? %>
+    <%= render 'bets/form' %>
+  <% else %>
+    
+  <% end %>
+</section>
 <p>
   <strong>Id:</strong>
   <%= @game.id %>

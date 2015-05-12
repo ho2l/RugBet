@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  resources :games
-  resources :games
+  resources :games do
+    resources :bets
+  end
 
   get 'welcome/index'
   root 'welcome#index'
