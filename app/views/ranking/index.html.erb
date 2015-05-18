@@ -15,12 +15,15 @@
 </section>
 <section>
   <div class="row">
+    <% i = 1 %>
     <% @users.each do |user| %>
+      <%= i %>
+      <% i=i+1 %>
       <%= user.username %>
-      <% if user.points==nil %>
+      <% if user.sum==nil %>
         0
       <% else %>
-        user.points
+        user.sum
       <% end %>
       </br>
     <% end %>

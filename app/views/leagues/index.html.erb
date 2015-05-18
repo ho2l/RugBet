@@ -1,0 +1,63 @@
+<section id="hero">
+
+ <div class="row">
+
+   <div class="twelve columns">
+
+     <div class="hero-text">
+       <h1 class="responsive-headline">Leagues</h1>
+       <h2 class="responsive-headline">Leagues are groups of friends</h2>       
+     </div>
+     </br>
+
+   </div>
+
+ </div>
+
+</section>
+<section id="styles">
+  <div class="row">
+    <h2>Your leagues :</h2>
+    <% @leagues_user.each do |league_user| %>
+      <%= league_user.title %>
+      <%= link_to 'Show', league_user %>
+      <%= link_to 'Edit', edit_league_path(league_user) %>
+      <%= link_to 'Destroy', league_user, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
+    <hr>
+  </div>
+  <div class="row">
+    <h2>Create a new league :</h2>
+    <%= link_to 'New League', new_league_path %>
+  </div>
+</section>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Leagues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leagues.each do |league| %>
+      <tr>
+        <td><%= league.title %></td>
+        <td><%= league.description %></td>
+        <td><%= link_to 'Show', league %></td>
+        <td><%= link_to 'Edit', edit_league_path(league) %></td>
+        <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New League', new_league_path %>

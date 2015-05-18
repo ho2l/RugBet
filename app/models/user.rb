@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessor :login
   has_many :bets
+  has_and_belongs_to_many :leagues
 end

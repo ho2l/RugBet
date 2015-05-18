@@ -1,0 +1,26 @@
+<section id="hero">
+
+ <div class="row">
+
+   <div class="twelve columns">
+
+     <div class="hero-text">
+       <h1 class="responsive-headline">League : <%= @league.title %></h1>
+       <h2 class="responsive-headline"><%= @league.description %></h2>       
+     </div>
+     </br>
+
+   </div>
+
+ </div>
+
+</section>
+<section id="styles">
+	<div class="row">
+		<h2>Member list :</h2>
+		<% @users.each do |user| %>
+	      <%= user.username %>
+	      </br>
+	    <% end %>
+    </div>
+</section>

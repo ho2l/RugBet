@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :leagues
   resources :bets
   devise_for :users
   get 'welcome/index'

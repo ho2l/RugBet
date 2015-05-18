@@ -1,4 +1,30 @@
-<section>
+<section id="hero">
+
+ <div class="row">
+
+   <div class="twelve columns">
+
+     <div class="hero-text">
+       <h1 class="responsive-headline"><%= @game.e1 %> VS <%= @game.e2 %></h1>
+       <h2 class="responsive-headline"><%= @isPlayed %></h2>       
+     </div>
+     </br>
+
+   </div>
+
+ </div>
+</section>
+<section id="styles">
+  <div class="row">
+    <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
+    <p>
+      <%= @game.description %></br>
+      Start time : <%= @game.start %></br>
+      At <%= @game.location %>
+    </p>  
+    <hr>
+  </div>
+  <div class="row">
 	<h1>Editing Bet</h1>
 	<% if @access == true %>
 		<%= render partial: 'bets/form' %>
@@ -6,4 +32,5 @@
 		<%= render file: "./public/404" %>
 	<% end %>
 	<%= link_to 'Back', :back %>
+  </div>
 </section>
