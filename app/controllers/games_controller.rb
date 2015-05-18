@@ -14,6 +14,12 @@ class GamesController < ApplicationController
     if @game.s2 != nil
       @isPlayed = @game.s1.to_s+" - "+@game.s2.to_s 
     end
+    if Bet.find_by(game_id: @game.id, user_id: current_user.id)
+      @betted = true
+      @betDone = Bet.find_by(game_id: @game.id, user_id: current_user.id)
+    else
+      @betted = false
+    end
     @bet = Bet.new
   end
 
@@ -25,6 +31,7 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
   end
+
 
   # POST /games
   # POST /games.json

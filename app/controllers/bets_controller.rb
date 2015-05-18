@@ -19,6 +19,12 @@ class BetsController < ApplicationController
 
   # GET /bets/1/edit
   def edit
+    if Bet.find_by(game_id: @bet.game_id, user_id: current_user.id)
+      @game = Game.find(@bet.game_id)
+      @access = true
+    else
+      @access = false
+    end
   end
 
   # POST /bets

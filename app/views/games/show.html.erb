@@ -1,30 +1,3 @@
-<header>
-
-  <div class="logo">
-     <a class="smoothscroll" href="#hero"><img alt="" src="images/logo.png"></a>
-  </div>
-
-  <nav id="nav-wrap">         
-     
-    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
-    <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>         
-
-     <ul id="nav" class="nav">
-        <li><a class="smoothscroll" href="./">Home</a></li>
-        <li><a class="smoothscroll" href="./games">Games</a></li>
-        <li><a class="smoothscroll" href="./ranking">Ranking</a></li>
-     </ul> <!-- end #nav -->
-
-  </nav> <!-- end #nav-wrap -->
-
-  <ul class="header-social">
-     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-  </ul>
-
-</header>
-
 <section id="hero">
 
  <div class="row">
@@ -53,60 +26,18 @@
     <hr>
   </div>
   <% if user_signed_in? %>
-    <%= render 'bets/form' %>
+    <% if @betted==false %>
+      <div class="row">
+        <%= render "bets/form" %>
+      </div>
+    <% else %>
+      <div class="row">
+          <h3>Your bet :</h3>
+          <h4><%= @game.e1 %> <%= @betDone.s1 %> VS <%= @betDone.s2 %><%= @game.e2 %> </h4>
+          <%= link_to 'Edit your bet', edit_game_bet_path(@game.id, @betDone.id) %>
+      </div>
+    <% end %>
   <% else %>
     
   <% end %>
 </section>
-<p>
-  <strong>Id:</strong>
-  <%= @game.id %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
-
-<p>
-  <strong>Pool:</strong>
-  <%= @game.pool %>
-</p>
-
-<p>
-  <strong>E1:</strong>
-  <%= @game.e1 %>
-</p>
-
-<p>
-  <strong>E2:</strong>
-  <%= @game.e2 %>
-</p>
-
-<p>
-  <strong>S1:</strong>
-  <%= @game.s1 %>
-</p>
-
-<p>
-  <strong>S2:</strong>
-  <%= @game.s2 %>
-</p>
-
-<p>
-  <strong>Start:</strong>
-  <%= @game.start %>
-</p>
-
-<p>
-  <strong>End:</strong>
-  <%= @game.end %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @game.location %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>

@@ -1,6 +1,9 @@
-<h1>Editing Bet</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @bet %> |
-<%= link_to 'Back', bets_path %>
+<section>
+	<h1>Editing Bet</h1>
+	<% if @access == true %>
+		<%= render partial: 'bets/form' %>
+	<% else %>
+		<%= render file: "./public/404" %>
+	<% end %>
+	<%= link_to 'Back', :back %>
+</section>
