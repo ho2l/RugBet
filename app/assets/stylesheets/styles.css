@@ -15,3 +15,15 @@
 	float:left;
 	text-align:center;
 }
+
+ul#nav li a{
+	color:#fff;
+}
+
+header .header-social{
+	color:#fff;
+}
+
+.navbar-link{
+	color:#fff;
+}
