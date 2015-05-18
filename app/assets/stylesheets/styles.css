@@ -1,0 +1,17 @@
+.gameFlags{
+	width:33%;
+	float:left;
+	text-align:center;
+}
+
+.gameDesc{
+	width:33%;
+	float:left;
+	text-align:center;
+	margin-left:33%;
+}
+.gameTitle{
+	width:33%;
+	float:left;
+	text-align:center;
+}

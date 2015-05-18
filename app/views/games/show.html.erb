@@ -17,12 +17,28 @@
 </section>
 <section id="styles">
   <div class="row">
-    <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
+    <div class="row">
+      <div class="gameFlags">
+       <%=  image_tag "flags/"+@game.e1 %>
+      </div>
+      <div class="gameTitle">
+      <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
+      </div>
+      <div class="gameFlags">
+        <%= image_tag "flags/"+@game.e2 %>
+      </div>
+  </div>
+  <div class="row">
+    <div class="gameDesc">
     <p>
       <%= @game.description %></br>
       Start time : <%= @game.start %></br>
-      At <%= @game.location %>
+      <i class="fa fa-clock-o"></i>  <%= @game.location %>
     </p>  
+    </div>
+
+  </div>
+
     <hr>
   </div>
   <% if user_signed_in? %>
