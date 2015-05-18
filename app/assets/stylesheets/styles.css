@@ -22,8 +22,36 @@ ul#nav li a{
 
 header .header-social{
 	color:#fff;
+	font: 11px "montserrat-regular",sans-serif;
+	line-height: 38px;
+	padding: 8px;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .navbar-link{
+	font: 11px "montserrat-regular",sans-serif;
 	color:#fff;
+	padding: 8px;
+}
+
+a:visited.navbar-link{
+	color:#fff;
+}
+
+#styles{
+	padding-top: 20px;
+	background: #fff;
+}
+
+#styles p {
+	color: #000;
+}
+
+footer {
+	text-align: center;
+}
+
+.games{
+	text-align: center;
 }
