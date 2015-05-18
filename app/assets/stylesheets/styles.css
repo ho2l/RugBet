@@ -1,21 +1,4 @@
-.gameFlags{
-	width:33%;
-	float:left;
-	text-align:center;
-}
-
-.gameDesc{
-	width:33%;
-	float:left;
-	text-align:center;
-	margin-left:33%;
-}
-.gameTitle{
-	width:33%;
-	float:left;
-	text-align:center;
-}
-
+/*Menu*/
 ul#nav li a{
 	color:#fff;
 }
@@ -39,6 +22,8 @@ a:visited.navbar-link{
 	color:#fff;
 }
 
+/*General*/
+
 #styles{
 	padding-top: 20px;
 	background: #fff;
@@ -52,6 +37,38 @@ footer {
 	text-align: center;
 }
 
+/*Games*/
+.gameFlags{
+	width:33%;
+	float:left;
+	text-align:center;
+}
+
+.gameDesc{
+	width:33%;
+	float:left;
+	text-align:center;
+	margin-left:33%;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.gameTitle{
+	width:33%;
+	float:left;
+	text-align:center;
+	padding-top: 3%;
+}
+
+.gameBet{
+	text-align: center;
+	padding-bottom: 2%;
+}
+
 .games{
 	text-align: center;
+}
+
+.gameBet .actions{
+	padding-top: 20px;
 }

@@ -32,8 +32,8 @@
     <div class="gameDesc">
     <p>
       <%= @game.description %></br>
-      Start time : <%= @game.start %></br>
-      <i class="fa fa-clock-o"></i>  <%= @game.location %>
+      <i class="fa fa-clock-o"></i>   - <%= @game.start %></br>
+      <i class="fa fa-map-marker"></i>   <%= @game.location %>
     </p>  
     </div>
 
@@ -43,14 +43,14 @@
   </div>
   <% if user_signed_in? %>
     <% if @betted==false %>
-      <div class="row">
+      <div class="row gameBet">
         <%= render "bets/form" %>
       </div>
     <% else %>
-      <div class="row">
+      <div class="row gameBet">
           <h3>Your bet :</h3>
-          <h4><%= @game.e1 %> <%= @betDone.s1 %> VS <%= @betDone.s2 %><%= @game.e2 %> </h4>
-          <%= link_to 'Edit your bet', edit_game_bet_path(@game.id, @betDone.id) %>
+          <h4><%= @game.e1 %> <%= @betDone.s1 %> - <%= @betDone.s2 %> <%= @game.e2 %> </h4>
+          <%= link_to 'Edit your bet', edit_game_bet_path(@game.id, @betDone.id), :class => 'button'%>
       </div>
     <% end %>
   <% else %>
