@@ -25,13 +25,33 @@ class LeaguesController < ApplicationController
   def edit
   end
 
+  def join
+    @pass = params[:pass] if params[:pass].present?
+    @result = nil
+    if (League.where(pass: @pass.to_i).take != nil)
+      @league = League.where(pass: @pass.to_i).take
+      if (League.find_by_sql("SELECT * FROM leagues_users WHERE league_id="+@league.id.to_s+" AND user_id="+current_user.id.to_s+";") != nil)
+        @result = "Already in League !"
+      else
+        @query = "INSERT INTO leagues_users (league_id, user_id) VALUES ("+@league.id.to_s+","+current_user.id.to_s+");"
+        League.connection.insert(@query)
+        @result = "League joined !"
+      end
+    else
+      @result = "Wrong pass !"
+    end
+  end
+
   # POST /leagues
   # POST /leagues.json
   def create
     @league = League.new(league_params)
     @user = current_user
     @league.users << @user
-
+    @league.pass = 0
+    while ((@league.pass == 0) || (League.find_by pass: @league.pass != nil))
+      @league.pass = Random.rand(999999)
+    end
 
     respond_to do |format|
       if @league.save

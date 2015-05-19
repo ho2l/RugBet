@@ -1,0 +1,15 @@
+<section id="styles">
+  <div class="row">
+    <h2>Join a league :</h2>
+    <%= form_tag("/leagues/join", method: "get") do %>
+       <div class="field">
+         <%= label_tag(:pass, "Join league:") %>
+         <%= text_field_tag( :pass) %>
+      </div>
+      <div class="actions">
+        <%= submit_tag("Join") %>
+      </div>
+    <% end %>
+    <%= @result %>
+  </div>
+</section>
