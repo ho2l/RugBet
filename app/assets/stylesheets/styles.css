@@ -37,6 +37,13 @@ footer {
 	text-align: center;
 }
 
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+
 /*Games*/
 .gameFlags{
 	width:33%;
@@ -62,7 +69,6 @@ footer {
 
 .gameBet{
 	text-align: center;
-	padding-bottom: 2%;
 }
 
 .games{
@@ -121,13 +127,20 @@ footer {
 	transition: all 200ms ease-in-out 0s;
 	border-radius: 3px;
 }
-.left{
-	float:left;
-}
-.right{
-	float:right;
+
+.gameComments{
+	text-align: center;
 }
 
+.gameComments #comment_body{
+	min-height: 100px;
+	display:inline;
+	min-width: 40%;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+
+/*Leagues*/
 #field{
 	margin-left:2%;
 }

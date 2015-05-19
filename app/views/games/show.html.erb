@@ -49,27 +49,25 @@
     <hr>
   </div>
   <% if user_signed_in? %>
+    <div class="row gameBet">
     <% if @betted==false %>
-      <div class="row gameBet">
-        <%= render "bets/form" %>
-      </div>
-    <% else %>
-      <div class="row gameBet">
-          <h3>Your bet :</h3>
-          <h4><%= @game.e1 %> <%= @betDone.s1 %> - <%= @betDone.s2 %> <%= @game.e2 %> </h4>
-          <%= link_to 'Edit your bet', edit_game_bet_path(@game.id, @betDone.id), :class => 'button'%>
-          <hr>
-      </div>
+      <%= render "bets/form" %>
+    <% else %>  
+      <h3>Your bet :</h3>
+      <h4><%= @game.e1 %> <%= @betDone.s1 %> - <%= @betDone.s2 %> <%= @game.e2 %> </h4>
+      <%= link_to 'Edit your bet', edit_game_bet_path(@game.id, @betDone.id), :class => 'button'%>
     <% end %>
-    <div class="row">
+    <hr>
+    </div>
+    <div class="row gameComments">
       <h2>Comments</h2>
       <% @game.comments.each do |comment| %>
         <p>
-          <strong>Comment by <%= comment.user.username %> :</strong>
+          <strong>Comment by <%= comment.user.username %> at <%= comment.created_at %> :</strong>
           <%= comment.body %>
         </p>
       <% end %>
-      <h2>Add a comment:</h2>
+      <h2>New comment:</h2>
       <%= form_for([@game, @game.comments.build]) do |f| %>
         <p>
           <%= f.text_area :body %>
