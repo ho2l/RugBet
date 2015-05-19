@@ -23,7 +23,7 @@
     <table class="fullTable">
     <% @leagues_user.each do |league_user| %>
     <tr>
-      <td> <%= league_user.title %> </td>
+      <td class="threeQuaterSize"> <%= league_user.title %> </td>
       <td> <%= link_to "<i class='fa fa-eye'></i>".html_safe, league_user %> </td>
       <td> <%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_league_path(league_user) %> </td>
       <td> <%= link_to "<i class='fa fa-times'></i>".html_safe, league_user, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
@@ -52,7 +52,7 @@
       <tbody>
         <% @leagues.each do |league| %>
           <tr>
-            <td><%= league.title %></td>
+            <td class="threeQuaterSize"><%= league.title %></td>
             <td><%= league.description %></td>
             <td><%= link_to "<i class='fa fa-eye'></i>".html_safe, league %></td>
             <td><%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_league_path(league) %></td>
