@@ -1,0 +1,67 @@
+<section id="hero">
+
+ <div class="row">
+
+   <div class="twelve columns">
+
+     <div class="hero-text">
+       <h1 class="responsive-headline">Leagues</h1>
+       <p>Leagues are groups of friends</p>       
+     </div>
+     </br>
+
+   </div>
+
+ </div>
+
+</section>
+<section id="styles">
+  <div class="row">
+    <h2 class="left">Your leagues :</h2>
+    <%= link_to "<button id='newLeague' class='right'>Create a New League</button>".html_safe, new_league_path %>
+    <hr>
+    <table class="fullTable">
+    <% @leagues_user.each do |league_user| %>
+    <tr>
+      <td class="threeQuaterSize"> <%= league_user.title %> </td>
+      <td> <%= link_to "<i class='fa fa-eye'></i>".html_safe, league_user %> </td>
+      <td> <%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_league_path(league_user) %> </td>
+      <td> <%= link_to "<i class='fa fa-times'></i>".html_safe, league_user, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+    <%end%>
+    </table>
+  </div>
+
+</section>
+<section id="styles">
+<div class="row">
+<p id="notice"><%= notice %></p>
+</div>
+</section>
+<section id="styles">
+  <div class="row">
+    <h1>Listing Leagues</h1>
+    <table class="fullTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @leagues.each do |league| %>
+          <tr>
+            <td class="threeQuaterSize"><%= league.title %></td>
+            <td><%= league.description %></td>
+            <td><%= link_to "<i class='fa fa-eye'></i>".html_safe, league %></td>
+            <td><%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_league_path(league) %></td>
+            <td><%= link_to "<i class='fa fa-times'></i>".html_safe, league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<%= link_to 'New League', new_league_path %>
