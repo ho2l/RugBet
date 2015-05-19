@@ -65,7 +65,7 @@
       <h2>Comments</h2>
       <% @game.comments.each do |comment| %>
         <p>
-          <strong>Comment:</strong>
+          <strong>Comment by <%= comment.user.username %> :</strong>
           <%= comment.body %>
         </p>
       <% end %>
