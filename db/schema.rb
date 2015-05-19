@@ -44,14 +44,15 @@ ActiveRecord::Schema.define(version: 20150519094808) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "games", force: :cascade do |t|
+    t.integer  "identifiant"
     t.text     "description"
     t.string   "pool"
     t.string   "e1"
     t.string   "e2"
     t.integer  "s1"
     t.integer  "s2"
-    t.datetime "start"
-    t.datetime "end"
+    t.date     "start"
+    t.date     "end"
     t.string   "location"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
