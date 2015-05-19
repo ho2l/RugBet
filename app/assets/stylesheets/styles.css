@@ -72,3 +72,52 @@ footer {
 .gameBet .actions{
 	padding-top: 20px;
 }
+
+.pagination{
+	margin-top: 2px;
+	text-align: center;
+	padding: 0px;
+	padding-bottom: 1%;
+	border: 0px none;
+	outline: 0px none;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: none repeat scroll 0% 0% transparent;
+	box-sizing: border-box;
+}
+
+.pagination a{
+	font: 15px/18px "opensans-bold",sans-serif;
+	display: inline-block;
+	padding: 6px 10px;
+	margin-right: 3px;
+	margin-bottom: 6px;
+	color: #6E757C;
+	background-color: #E6E8EB;
+	transition: all 200ms ease-in-out 0s;
+	border-radius: 3px;
+}
+
+.pagination em{
+	font: 15px/18px "opensans-bold",sans-serif;
+	display: inline-block;
+	padding: 6px 10px;
+	margin-right: 3px;
+	margin-bottom: 6px;
+	background-color: #11ABB0;
+	color: #FFF;
+	transition: all 200ms ease-in-out 0s;
+	border-radius: 3px;
+}
+
+.pagination span{
+	font: 15px/18px "opensans-bold",sans-serif;
+	display: inline-block;
+	padding: 6px 10px;
+	margin-right: 3px;
+	margin-bottom: 6px;
+	background-color: #E6E8EB;
+	color: #A9ADB2;
+	transition: all 200ms ease-in-out 0s;
+	border-radius: 3px;
+}

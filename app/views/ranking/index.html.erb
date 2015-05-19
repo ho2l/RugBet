@@ -13,9 +13,9 @@
  </div>
 
 </section>
-<section>
+<section id="styles">
   <div class="row">
-    <% i = 1 %>
+    <p><% i = 1 %>
     <% @users.each do |user| %>
       <%= i %>
       <% i=i+1 %>
@@ -27,5 +27,6 @@
       <% end %>
       </br>
     <% end %>
+    </p>
   </div>
 </section>

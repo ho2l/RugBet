@@ -27,17 +27,16 @@
       <div class="gameFlags">
         <%= image_tag "flags/"+@game.e2 %>
       </div>
-  </div>
-  <div class="row">
-    <div class="gameDesc">
-    <p>
-      <%= @game.description %></br>
-      <i class="fa fa-clock-o"></i>   - <%= @game.start %></br>
-      <i class="fa fa-map-marker"></i>   <%= @game.location %>
-    </p>  
     </div>
-
-  </div>
+    <div class="row">
+      <div class="gameDesc">
+      <p>
+        <%= @game.description %></br>
+        <i class="fa fa-clock-o"></i>   - <%= @game.start %></br>
+        <i class="fa fa-map-marker"></i>   <%= @game.location %>
+      </p>  
+      </div>
+    </div>
 
     <hr>
   </div>

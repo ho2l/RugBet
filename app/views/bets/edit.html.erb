@@ -15,22 +15,37 @@
  </div>
 </section>
 <section id="styles">
-  <div class="row">
-    <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
-    <p>
-      <%= @game.description %></br>
-      Start time : <%= @game.start %></br>
-      At <%= @game.location %>
-    </p>  
+  <div class="row games">
+    <div class="row">
+      <div class="gameFlags">
+       <%=  image_tag "flags/"+@game.e1 %>
+      </div>
+      <div class="gameTitle">
+      <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
+      </div>
+      <div class="gameFlags">
+        <%= image_tag "flags/"+@game.e2 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="gameDesc">
+      <p>
+        <%= @game.description %></br>
+        <i class="fa fa-clock-o"></i>   - <%= @game.start %></br>
+        <i class="fa fa-map-marker"></i>   <%= @game.location %>
+      </p>  
+      </div>
+    </div>
+
     <hr>
   </div>
-  <div class="row">
-	<h1>Editing Bet</h1>
-	<% if @access == true %>
-		<%= render partial: 'bets/form' %>
-	<% else %>
-		<%= render file: "./public/404" %>
-	<% end %>
-	<%= link_to 'Back', :back %>
+  <div class="row gameBet">
+  	<h2>Editing Bet</h2>
+  	<% if @access == true %>
+  		<%= render partial: 'bets/form' %>
+  	<% else %>
+  		<%= render file: "./public/404" %>
+  	<% end %>
+  	<%= link_to 'Back', :back, :class => 'button'%>
   </div>
 </section>
