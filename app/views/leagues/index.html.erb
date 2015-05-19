@@ -17,47 +17,51 @@
 </section>
 <section id="styles">
   <div class="row">
-    <h2>Your leagues :</h2>
-    <% @leagues_user.each do |league_user| %>
-      <%= league_user.title %>
-      <%= link_to 'Show', league_user %>
-      <%= link_to 'Edit', edit_league_path(league_user) %>
-      <%= link_to 'Destroy', league_user, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%end%>
+    <h2 class="left">Your leagues :</h2>
+    <%= link_to "<button id='newLeague' class='right'>Create a New League</button>".html_safe, new_league_path %>
     <hr>
+    <table class="fullTable">
+    <% @leagues_user.each do |league_user| %>
+    <tr>
+      <td> <%= league_user.title %> </td>
+      <td> <%= link_to "<i class='fa fa-eye'></i>".html_safe, league_user %> </td>
+      <td> <%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_league_path(league_user) %> </td>
+      <td> <%= link_to "<i class='fa fa-times'></i>".html_safe, league_user, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+    <%end%>
+    </table>
   </div>
+
+</section>
+<section id="styles">
+<div class="row">
+<p id="notice"><%= notice %></p>
+</div>
+</section>
+<section id="styles">
   <div class="row">
-    <h2>Create a new league :</h2>
-    <%= link_to 'New League', new_league_path %>
+    <h1>Listing Leagues</h1>
+    <table style="width:100%">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @leagues.each do |league| %>
+          <tr>
+            <td><%= league.title %></td>
+            <td><%= league.description %></td>
+            <td><%= link_to "<i class='fa fa-eye'></i>".html_safe, league %></td>
+            <td><%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_league_path(league) %></td>
+            <td><%= link_to "<i class='fa fa-times'></i>".html_safe, league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </section>
-
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Leagues</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @leagues.each do |league| %>
-      <tr>
-        <td><%= league.title %></td>
-        <td><%= league.description %></td>
-        <td><%= link_to 'Show', league %></td>
-        <td><%= link_to 'Edit', edit_league_path(league) %></td>
-        <td><%= link_to 'Destroy', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New League', new_league_path %>
