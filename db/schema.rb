@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518130701) do
+ActiveRecord::Schema.define(version: 20150519094808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20150518130701) do
 
   add_index "bets", ["game_id"], name: "index_bets_on_game_id", using: :btree
   add_index "bets", ["user_id"], name: "index_bets_on_user_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["game_id"], name: "index_comments_on_game_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "games", force: :cascade do |t|
     t.text     "description"
@@ -83,4 +94,6 @@ ActiveRecord::Schema.define(version: 20150518130701) do
 
   add_foreign_key "bets", "games"
   add_foreign_key "bets", "users"
+  add_foreign_key "comments", "games"
+  add_foreign_key "comments", "users"
 end

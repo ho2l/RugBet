@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :games do
     resources :bets
+    resources :comments
   end
 
   get 'welcome/index'
