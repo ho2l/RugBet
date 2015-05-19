@@ -121,3 +121,10 @@ footer {
 	transition: all 200ms ease-in-out 0s;
 	border-radius: 3px;
 }
+.left{
+	float:left;
+}
+
+#field{
+	margin-left:2%;
+}
