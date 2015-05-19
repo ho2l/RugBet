@@ -1,4 +1,5 @@
 class BetsController < ApplicationController
+  before_filter :authenticate_user!, only:[:new,:show,:edit,:create,:update,:destroy]
   before_action :set_bet, only: [:show, :edit, :update, :destroy]
 
   # GET /bets
