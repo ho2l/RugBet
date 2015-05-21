@@ -38,7 +38,11 @@ class LeaguesController < ApplicationController
         @result = "League joined !"
       end
     else
-      @result = "Wrong pass !"
+      if params[:pass].present?
+        @result = "Wrong pass !"
+      else
+        @result = nil
+      end
     end
   end
 

@@ -43,6 +43,9 @@ footer {
 .right{
 	float:right;
 }
+.center{
+	text-align: center;
+}
 
 /*Games*/
 .gameFlags{
@@ -139,6 +142,7 @@ footer {
 	margin-bottom: 0px;
 	margin-top: 10px;
 }
+
 
 /*Leagues*/
 #field{

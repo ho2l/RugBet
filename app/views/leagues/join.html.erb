@@ -1,15 +1,29 @@
+<section id="hero">
+
+ <div class="row">
+
+   <div class="twelve columns">
+
+     <div class="hero-text">
+       <h1 class="responsive-headline">Join a League</h1>
+       <p>Leagues are groups of friends</p>       
+     </div>
+     </br>
+   </div>
+ </div>
+</section>
 <section id="styles">
   <div class="row">
-    <h2>Join a league :</h2>
+    <h3><%= @result %></h3>
     <%= form_tag("/leagues/join", method: "get") do %>
        <div class="field">
-         <%= label_tag(:pass, "Join league:") %>
+         <%= label_tag(:pass, "League's Pass :") %>
          <%= text_field_tag( :pass) %>
       </div>
       <div class="actions">
         <%= submit_tag("Join") %>
       </div>
     <% end %>
-    <%= @result %>
+    <%= link_to "Back to leagues", leagues_path, :class => 'button' %>
   </div>
 </section>
