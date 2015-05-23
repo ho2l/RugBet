@@ -30,7 +30,7 @@ class LeaguesController < ApplicationController
     @result = nil
     if (League.where(pass: @pass.to_i).take != nil)
       @league = League.where(pass: @pass.to_i).take
-      if (League.find_by_sql("SELECT * FROM leagues_users WHERE league_id="+@league.id.to_s+" AND user_id="+current_user.id.to_s+";") != nil)
+      if (League.count_by_sql("SELECT COUNT(*) FROM leagues_users WHERE league_id="+@league.id.to_s+" AND user_id="+current_user.id.to_s+";") != 0)
         @result = "Already in League !"
       else
         @query = "INSERT INTO leagues_users (league_id, user_id) VALUES ("+@league.id.to_s+","+current_user.id.to_s+");"

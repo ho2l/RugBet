@@ -52,15 +52,7 @@ footer {
 	width:33%;
 	float:left;
 	text-align:center;
-}
-
-.gameDesc{
-	width:33%;
-	float:left;
-	text-align:center;
-	margin-left:33%;
-	font-size: 16px;
-	font-style: italic;
+	vertical-align: middle;
 }
 
 .gameTitle{
@@ -68,6 +60,11 @@ footer {
 	float:left;
 	text-align:center;
 	padding-top: 3%;
+}
+
+.gameTitle p{
+	font-size: 16px;
+	line-height: 24px;
 }
 
 .gameBet{
@@ -86,13 +83,14 @@ footer {
 	margin-top: 2px;
 	text-align: center;
 	padding: 0px;
-	padding-bottom: 1%;
+	padding-bottom: 2%;
 	border: 0px none;
 	outline: 0px none;
 	font-size: 100%;
 	vertical-align: baseline;
 	background: none repeat scroll 0% 0% transparent;
 	box-sizing: border-box;
+	margin-bottom: 0px;
 }
 
 .pagination a{

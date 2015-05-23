@@ -19,10 +19,13 @@
 	<div class="row">
     <h2>Pass :</h2>
     <p><b><%= @league.pass %></b> - (This pass is required if people want to join your league, share it with your friends with caution !)</p>
+    <hr>
 		<h2>Member list :</h2>
 		<% @users.each do |user| %>
-	      <%= user.username %>
-	      </br>
-	    <% end %>
-    </div>
+      <%= user.username %>
+      </br>
+    <% end %>
+    <hr>
+    <%= link_to "Delete league".html_safe, @league, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 </section>

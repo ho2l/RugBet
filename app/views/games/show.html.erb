@@ -27,6 +27,11 @@
       </div>
       <div class="gameTitle">
       <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
+      <p>
+        <%= @game.description %></br>
+        <i class="fa fa-clock-o"></i>   - <%= @game.start %></br>
+        <i class="fa fa-map-marker"></i>   <%= @game.location %>
+      </p>
       </div>
       <div class="gameFlags">
       <% if @game.e2!="TBC" %>
@@ -35,17 +40,7 @@
         <i class="fa fa-question fa-5x"></i>
       <% end %>
       </div>
-    </div>
-    <div class="row">
-      <div class="gameDesc">
-      <p>
-        <%= @game.description %></br>
-        <i class="fa fa-clock-o"></i>   - <%= @game.start %></br>
-        <i class="fa fa-map-marker"></i>   <%= @game.location %>
-      </p>  
-      </div>
-    </div>
-
+    </div> 
     <hr>
   </div>
   <% if user_signed_in? %>
