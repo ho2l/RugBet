@@ -27,6 +27,7 @@ a:visited.navbar-link{
 #styles{
 	padding-top: 20px;
 	background: #fff;
+	min-height: 200px;
 }
 
 #styles p {
@@ -48,6 +49,10 @@ footer {
 }
 
 /*Games*/
+.gameHead{
+	background-image: url('grass.jpg');
+}
+
 .gameFlags{
 	width:33%;
 	float:left;
@@ -67,8 +72,22 @@ footer {
 	line-height: 24px;
 }
 
-.gameBet{
+.betRight{
+	text-align: right;
+}
+
+.betLeft{
+	text-align: left;
+	border-left: 1px solid #E8E8E8;
+}
+
+.gameBet {
 	text-align: center;
+}
+
+.gameBet label{
+	display:inline-block;
+	font-size: 20px;
 }
 
 .games{
@@ -139,6 +158,10 @@ footer {
 	min-width: 40%;
 	margin-bottom: 0px;
 	margin-top: 10px;
+}
+
+.hero-text h3 {
+	color: #fff;
 }
 
 

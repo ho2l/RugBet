@@ -12,10 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label @game.e1 %>
-    <%= f.number_field :s1 , :value => @bet.s1 %>
-    <%= f.label @game.e2 %>
-    <%= f.number_field :s2 , :value => @bet.s2 %>
+    <div class="row">
+      <div class = "six columns betRight">
+        <%= f.label @game.e1 %></br>
+        <%= f.number_field :s1 , :value => @bet.s1 %>
+      </div>
+      <div class = "six columns betLeft">
+        <%= f.label @game.e2 %></br>
+        <%= f.number_field :s2 , :value => @bet.s2 %>
+      </div>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>
