@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.paginate(:page => params[:page], :per_page => 5)
+    @games = Game.order(:id).paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /games/1
@@ -55,6 +55,20 @@ class GamesController < ApplicationController
   def update
     respond_to do |format|
       if @game.update(game_params)
+        if @game.s1 > 0 || @game.s2 > 0
+          bets = Bet.find_by_sql("SELECT * FROM bets WHERE game_id="+@game.id.to_s+";")
+          bets.each do |bet|
+            betPoints = 0
+            if (@game.s1 > @game.s2 && bet.s1 > bet.s2) || (@game.s1 < @game.s2 && bet.s1 < bet.s2) 
+              betPoints = 100
+            end
+            if (@game.s1 == @game.s2 && bet.s1 == bet.s2) || (@game.s1 == bet.s1 && @game.s2 == bet.s2)
+              betPoints = 200
+            end
+            bet.points = betPoints.to_i
+            bet.save
+          end
+        end
         format.html { redirect_to @game, notice: 'Game was successfully updated.' }
         format.json { render :show, status: :ok, location: @game }
       else
