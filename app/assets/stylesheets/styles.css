@@ -181,3 +181,11 @@ footer {
 .threeQuaterSize{
 	width:75%;
 }
+
+/* Index */
+#count-down{
+	width:100%;
+}
+.county-days-wrapper{
+	width: 15%;
+}
