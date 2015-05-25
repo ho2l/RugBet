@@ -15,18 +15,21 @@
 </section>
 <section id="styles">
   <div class="row">
-    <p><% i = 1 %>
+  <table id="rankingTable">
+  <tr>
+    <th>Position</th>
+    <th>User</th>
+    <th>Score</th>
+  </tr>
+    <% i = 1 %>
     <% @users.each do |user| %>
-      <%= i %>
+    <tr>
+      <td class="small"%><% if i==1 %><i class="fa fa-beer"></i><% else %>  <%= i %> <% end %> </td>
       <% i=i+1 %>
-      <%= user.username %>
-      <% if user.sum==nil %>
-        0
-      <% else %>
-        user.sum
-      <% end %>
-      </br>
+      <td class="mid"><%= user.username %> </td>
+      <td class="small"><% if user.sum==nil %>0<% else %>user.sum<% end %></td>
+    </tr>
     <% end %>
-    </p>
+  </table>
   </div>
 </section>

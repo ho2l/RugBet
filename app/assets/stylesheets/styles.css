@@ -182,10 +182,17 @@ footer {
 	width:75%;
 }
 
-/* Index */
-#count-down{
-	width:100%;
+/* Ranking */
+#rankingTable{
+	text-align:center;
+	width:75%;
+	margin-left: 13%;
+	font-size: 23px;
 }
-.county-days-wrapper{
-	width: 15%;
+
+.small{
+	width:25%;
+}
+.mid{
+	width:50%;
 }
