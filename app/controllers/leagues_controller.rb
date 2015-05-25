@@ -1,6 +1,11 @@
 class LeaguesController < ApplicationController
   before_filter :authenticate_user!, only:[:index,:new,:show,:edit,:create,:update,:destroy]
   before_action :set_league, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, :except => [:show, :index]
+
+  def authorize 
+    redirect_to "/"
+  end 
 
 
   # GET /leagues
