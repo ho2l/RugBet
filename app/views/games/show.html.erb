@@ -6,7 +6,7 @@
 
        <div class="hero-text">
          <h1 class="responsive-headline"><%= @game.e1 %> VS <%= @game.e2 %></h1>
-         <h3 class="responsive-headline"><%= @isPlayed %></h3>       
+         <h1 class="responsive-headline"><%= @isPlayed %></h1>       
        </div>
        </br>
 
@@ -46,12 +46,16 @@
   </div>
   <% if user_signed_in? %>
     <div class="row gameBet">
-    <% if @betted==false %>
+    <% if @betted==false && @isPlayed == "Not played" %>
       <%= render "bets/form" %>
     <% else %>  
       <h3>Your bet :</h3>
       <h4><%= @game.e1 %> <%= @betDone.s1 %> - <%= @betDone.s2 %> <%= @game.e2 %> </h4>
-      <%= link_to 'Edit your bet', edit_game_bet_path(@game.id, @betDone.id), :class => 'button'%>
+      <% if @betDone.points != nil %>
+        <h5>You won <%= @betDone.points.to_s %> points !</h5> 
+      <%else%>
+        <%= link_to 'Edit your bet', edit_game_bet_path(@game.id, @betDone.id), :class => 'button'%>
+      <% end %>
     <% end %>
     <hr>
     </div>
