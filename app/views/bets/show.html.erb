@@ -1,34 +1,28 @@
 <p id="notice"><%= notice %></p>
+<section id="styles">
+  <div class="hero-text">
+    <h1 id="titleBack">Your bet has been accounted</h1>
+    <h2>Back to main in <span id="timer">5</span> second<span id="s">s</span></h2>
+  </div>
+</section>
 
-<p>
-  <strong>Id game:</strong>
-  <%= @bet.game_id %>
-</p>
+<script type="text/javascript">
+  
+          var count = 5;
+          var countdown = setInterval(function(){
+            $("#timer").html(count);
+            if(count==1)
+            {
+              $("#s").html("");
+            }
+            if (count == 0) {
+              clearInterval(countdown);
+              document.location.href= "/games";
+            }
+            count--;
+          }, 1000);
 
-<p>
-  <strong>Id user:</strong>
-  <%= @bet.user_id %>
-</p>
-
-<p>
-  <strong>S1:</strong>
-  <%= @bet.s1 %>
-</p>
-
-<p>
-  <strong>S2:</strong>
-  <%= @bet.s2 %>
-</p>
-
-<p>
-  <strong>Points:</strong>
-  <%= @bet.points %>
-</p>
-
-<p>
-  <strong>Done:</strong>
-  <%= @bet.done %>
-</p>
+</script>
 
 <%= link_to 'Edit', edit_bet_path(@bet) %> |
 <%= link_to 'Back', bets_path %>
