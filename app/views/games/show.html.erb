@@ -30,8 +30,8 @@
       <h2><%= @game.e1 %> VS <%= @game.e2 %></h2>
       <p>
         <%= @game.description %></br>
-        <i class="fa fa-clock-o"></i>   - <%= @game.start %></br>
-        <i class="fa fa-map-marker"></i>   <%= @game.location %>
+        <i class="fa fa-clock-o"></i> <%= @game.start.strftime("%m/%d/%Y at %I:%M%p UTC") %></br>
+        <i class="fa fa-map-marker"></i> <%= @game.location %>
       </p>
       </div>
       <div class="gameFlags">
@@ -63,7 +63,7 @@
       <h2>Comments</h2>
       <% @game.comments.each do |comment| %>
         <p>
-          <strong>Comment by <%= comment.user.username %> at <%= comment.created_at %> :</strong>
+          <strong>Comment by <%= comment.user.username %> on <%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p") %> :</strong>
           <%= comment.body %>
         </p>
       <% end %>
