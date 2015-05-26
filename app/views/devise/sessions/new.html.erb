@@ -27,7 +27,7 @@
   </div>
 
   
-<% if devise_mapping.rememberable? -%>
+
   <div class="row">
       <div class="left" id="field">
         <div class="field">
@@ -35,15 +35,16 @@
           <%= f.label :remember_me %>
         </div>
       </div>
-<% end %>
-    
 
-    <div class="left" style="margin-left:10%">
+  <div class="left" style="margin-left:10%">
       <div class="actions">
         <%= f.submit "Log in" %>
       </div>
     </div>
   </div>
+
+
+
 <% end %>
 <div class="row">
 <%= render "devise/shared/links" %>
