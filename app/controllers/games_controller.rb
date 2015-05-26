@@ -1,6 +1,11 @@
 class GamesController < ApplicationController
-  before_filter :authenticate_user!, only:[:new,:show,:edit,:create,:update,:destroy]
+  before_filter :authenticate_user!, only:[:show,:edit,:create,:update,:destroy]
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, :except => [:show, :index ]
+
+  def authorize 
+    redirect_to "/"
+  end 
 
   # GET /games
   # GET /games.json
